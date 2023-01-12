@@ -227,7 +227,7 @@ export const App: React.FC = () => {
 
                       {preparedCategories.map(categor => {
                         return (
-                          product.categoryId === selectedCategoriId && (
+                          product.categoryId === categor.id && (
                             <>
                               <td data-cy="ProductCategory">{ `${categor.icon} - ${categor.title}`}</td>
 
