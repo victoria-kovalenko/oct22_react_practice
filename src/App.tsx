@@ -47,6 +47,16 @@ export const App: React.FC = () => {
     reset();
   }
 
+  const handleCategorieChange
+    = (value: number) => {
+      setSelectedCategoriId(+value);
+    };
+
+  const handleUserChange
+    = (value: number) => {
+      setSelectedUserId(+value);
+    };
+
   return (
     <div className="section">
       <div className="container">
@@ -71,6 +81,7 @@ export const App: React.FC = () => {
                     href="#/"
                     key={user.id}
                     className={cn({ 'is-active': selectedUserId === user.id })}
+                    onChange={handleUserChange(user.id)}
                   >
                     {user.name}
                   </a>
@@ -126,6 +137,7 @@ export const App: React.FC = () => {
                       'is-info': selectedCategoriId === category.id,
                     })}
                     href="#/"
+                    onChange={handleCategorieChange(category.id)}
                   >
                     {category.title}
                   </a>
